@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Aakash Subedi</title>
+  <meta name="description" content="Creative Web Developer and Designer from Chitwan, Nepal">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <span class="text-primary">Aakash</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary desktop-only">Work with Me</a>
+
+      <!-- Mobile Menu Button -->
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Mobile Navigation -->
+      <nav class="nav-mobile">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="btn btn-primary mobile-btn">Work with Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="bg-element bg-element-1"></div>
+    <div class="bg-element bg-element-2"></div>
+
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h3 class="hero-subtitle">Hi, I'm</h3>
+        <h1 class="hero-title">
+          <span style="color: aqua;">Aakash Subedi</span>
+        </h1>
+        <p class="hero-description">
+          I'm a Creative Web Developer and Designer from Chitwan, Nepal working in web
+          development. I enjoy turning complex problems into simple, beautiful and intuitive designs.
+        </p>
+        <p class="hero-description">
+          My aim is to bring across your message and identity in the most creative way.
+        </p>
+
+        <div class="social-icons">
+          <a href="https://github.com/aakashsubedi" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/aakashsubedi_/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/aakashsubedi" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.facebook.com/aakashsubedi11" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+
+        <a href="work.html" class="btn btn-primary btn-lg">Let's Work Together</a>
+      </div>
+
+      <div class="hero-image">
+        <div class="image-glow"></div>
+        <div class="image-container">
+          <img src="images/me.png" alt="Aakash Subedi" width="400" height="400">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section bg-card">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">About</span>
+        <h2 class="section-title gradient-text">Crafting Digital Experiences</h2>
+        <p class="section-subtitle">
+          Transforming ideas into exceptional digital solutions with creativity and technical precision
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Experience Column -->
+        <div class="experience-column">
+          <div class="experience-card-wrapper">
+            <div class="experience-counter">1+</div>
+            <div class="card experience-card">
+              <h3>Year of Experience</h3>
+              <p>Dedicated to web design & development excellence</p>
+
+              <div class="features">
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                  </div>
+                  <span>Affordable Solutions</span>
+                </div>
+
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                  </div>
+                  <span>Premium Quality Delivery</span>
+                </div>
+
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <span>On-Time Project Completion</span>
+                </div>
+              </div>
+
+              <a href="learnmore.html" class="btn btn-primary btn-block">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs Column -->
+        <div class="tabs-column">
+          <div class="tabs-container">
+            <div class="tabs-nav">
+              <button class="tab-btn active" data-tab="story">My Story</button>
+              <button class="tab-btn" data-tab="skills">Skills</button>
+              <button class="tab-btn" data-tab="services">Services</button>
+            </div>
+
+            <div class="tabs-content">
+              <div class="tab-pane active" id="story">
+                <div class="tab-grid">
+                  <div class="tab-info">
+                    <h3>The Journey So Far</h3>
+                    <p>
+                      I focus on crafting intuitive digital solutions that simplify complexity into seamless, user-friendly designs. My work merges creative innovation with technical expertise to deliver exceptional results.
+                    </p>
+
+                    <div class="stats-container">
+                      <div class="stat-card stat-blue">
+                        <div class="stat-header">
+                          <h4>Happy Clients</h4>
+                          <i class="fas fa-users"></i>
+                        </div>
+                        <p class="stat-number">5+</p>
+                      </div>
+
+                      <div class="stat-card stat-purple">
+                        <div class="stat-header">
+                          <h4>Projects</h4>
+                          <i class="fas fa-folder"></i>
+                        </div>
+                        <p class="stat-number">5+</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-image">
+                    <img src="images/about/about2.jpg" alt="My Journey">
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="skills">
+                <div class="tab-grid">
+                  <div class="tab-info">
+                    <h3>Technical Expertise</h3>
+                    <p>
+                      Specializing in modern web technologies including HTML, CSS, JavaScript, and responsive design. I create accessible and performant web applications with clean, maintainable code.
+                    </p>
+
+                    <div class="stats-container">
+                      <div class="stat-card stat-blue">
+                        <div class="stat-header">
+                          <h4>Happy Clients</h4>
+                          <i class="fas fa-users"></i>
+                        </div>
+                        <p class="stat-number">5+</p>
+                      </div>
+
+                      <div class="stat-card stat-purple">
+                        <div class="stat-header">
+                          <h4>Projects</h4>
+                          <i class="fas fa-folder"></i>
+                        </div>
+                        <p class="stat-number">5+</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-image">
+                    <img src="images/about/about.jpg" alt="Technical Skills">
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="services">
+                <div class="tab-grid">
+                  <div class="tab-info">
+                    <h3>Services Offered</h3>
+                    <p>
+                      From concept to deployment, I offer end-to-end web development services including UI/UX design, frontend development, and CMS integration to bring your digital vision to life.
+                    </p>
+
+                    <div class="stats-container">
+                      <div class="stat-card stat-blue">
+                        <div class="stat-header">
+                          <h4>Happy Clients</h4>
+                          <i class="fas fa-users"></i>
+                        </div>
+                        <p class="stat-number">5+</p>
+                      </div>
+
+                      <div class="stat-card stat-purple">
+                        <div class="stat-header">
+                          <h4>Projects</h4>
+                          <i class="fas fa-folder"></i>
+                        </div>
+                        <p class="stat-number">5+</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-image">
+                    <img src="images/about/about1.jpg" alt="Services">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Cards -->
+      <div class="testimonial-section">
+        <h3 class="testimonial-title">What Drives My Work</h3>
+
+        <div class="testimonial-grid">
+          <div class="card testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Happy Clients</h3>
+            </div>
+
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+
+            <p class="quote-text">
+              "The single most important thing is to make your clients happy. If you are making your clients happy, as a side effect, they will be happy to open up their wallets and pay you."
+            </p>
+
+            <div class="quote-author">
+              <div class="author-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="author-info">
+                <p class="author-name">Client Testimonial</p>
+                <p class="author-title">Happy Client</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-icon">
+                <i class="fas fa-folder"></i>
+              </div>
+              <h3>Projects Completed</h3>
+            </div>
+
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+
+            <p class="quote-text">
+              "No matter how good the team or how efficient the methodology, if we're not solving the right problem, the project fails."
+            </p>
+
+            <div class="quote-author">
+              <div class="author-avatar">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="author-info">
+                <p class="author-name">Project Philosophy</p>
+                <p class="author-title">Problem-Solving Approach</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Skills</span>
+        <h2 class="section-title gradient-text">My Expertise</h2>
+        <p class="section-subtitle">
+          Here are the skills I've developed throughout my journey as a developer and designer.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="card skill-card" data-proficiency="75">
+          <div class="skill-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="skill-title">Web Development</h3>
+          <span class="skill-category">Frontend Engineering</span>
+          <div class="progress-container">
+            <div class="progress-header">
+              <span>Proficiency</span>
+              <span class="proficiency-value">75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+          <div class="skill-tools">
+            <span class="tool-tag">HTML</span>
+            <span class="tool-tag">CSS</span>
+            <span class="tool-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="card skill-card" data-proficiency="50">
+          <div class="skill-icon">
+            <i class="fas fa-terminal"></i>
+          </div>
+          <h3 class="skill-title">Programming</h3>
+          <span class="skill-category">Software Development</span>
+          <div class="progress-container">
+            <div class="progress-header">
+              <span>Proficiency</span>
+              <span class="proficiency-value">50%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+          <div class="skill-tools">
+            <span class="tool-tag">Python</span>
+          </div>
+        </div>
+
+        <div class="card skill-card" data-proficiency="75">
+          <div class="skill-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3 class="skill-title">UI/UX Design</h3>
+          <span class="skill-category">Visual Design</span>
+          <div class="progress-container">
+            <div class="progress-header">
+              <span>Proficiency</span>
+              <span class="proficiency-value">75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+          <div class="skill-tools">
+            <span class="tool-tag">Figma</span>
+          </div>
+        </div>
+
+        <div class="card skill-card" data-proficiency="70">
+          <div class="skill-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3 class="skill-title">Data Science</h3>
+          <span class="skill-category">Analytics & Visualization</span>
+          <div class="progress-container">
+            <div class="progress-header">
+              <span>Proficiency</span>
+              <span class="proficiency-value">70%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+          <div class="skill-tools">
+            <span class="tool-tag">Excel</span>
+            <span class="tool-tag">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Projects</div>
+        <h2 class="section-title gradient-text">My Portfolio</h2>
+        <p class="section-subtitle">A showcase of my best work and technical expertise</p>
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="featured">Featured</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-category="featured">
+          <div class="project-image">
+            <img src="images/project/project1.png" alt="E-Learning Platform">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <h3 class="project-title">E-Learning Platform</h3>
+            <p class="project-description">Logo and web development for a comprehensive e-learning website with user authentication and course management.</p>
+            <div class="project-links">
+              <a href="https://on-study.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/aakashsubedi" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-category="web">
+          <div class="project-image">
+            <img src="images/project/project2.png" alt="Profile Card">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <h3 class="project-title">Profile Card</h3>
+            <p class="project-description">A sleek, interactive profile card component with animations and responsive design.</p>
+            <div class="project-links">
+              <a href="https://aakashsubedi.github.io/ProfileCard/" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/aakashsubedi/ProfileCard" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-category="featured">
+          <div class="project-image">
+            <img src="images/project/project3.png" alt="E-Commerce Website">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
+            </div>
+            <h3 class="project-title">E-Commerce Website</h3>
+            <p class="project-description">Full-featured e-commerce platform with product catalog, shopping cart, and checkout functionality.</p>
+            <div class="project-links">
+              <a href="https://e-commerce-aakash.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/aakashsubedi" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-category="web">
+          <div class="project-image">
+            <img src="images/project/project4.png" alt="Restaurant Website">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <h3 class="project-title">Restaurant Website</h3>
+            <p class="project-description">Responsive restaurant website featuring menu display, reservation system, and location information.</p>
+            <div class="project-links">
+              <a href="https://aakashsubedi.github.io/Restaurant-Web/" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/aakashsubedi/Restaurant-Web" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" data-category="featured">
+          <div class="project-image">
+            <img src="images/project/project5.png" alt="Luxury Hotel Website">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <h3 class="project-title">Luxury Hotel Website</h3>
+            <p class="project-description">Elegant website for a luxury hotel chain with room booking, amenities showcase, and virtual tours.</p>
+            <div class="project-links">
+              <a href="https://aakashsubedi.github.io/Hotel-Web/" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/aakashsubedi/Hotel-Web" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" data-category="web">
+          <div class="project-image">
+            <img src="images/project/project6.png" alt="Gym Website">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Tailwind CSS</span>
+            </div>
+            <h3 class="project-title">Gym Website</h3>
+            <p class="project-description">Dynamic fitness center website with membership plans, class schedules, and trainer profiles.</p>
+            <div class="project-links">
+              <a href="https://gym-aakash.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/aakashsubedi" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="https://github.com/aakashsubedi" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <i class="fab fa-github"></i> View More on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Testimonials</div>
+        <h2 class="section-title gradient-text">Client Feedback</h2>
+      </div>
+
+      <div class="testimonials-container">
+        <div class="testimonials-track">
+          <!-- Group 1 -->
+          <div class="testimonials-group">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                "The experience of working with Aakash was truly satisfying. He was very responsive to our needs and always tried hard to provide the best results. Thank you for your cooperation!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="images/testimonial/Testimonial1.jpeg" alt="Bikash">
+                </div>
+                <div class="author-info">
+                  <h4>Bikash</h4>
+                  <p>Marketing Director</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                "Aakash delivered beyond my expectations! Professional, attentive, and creative—they transformed my vision into a stunning reality. Highly recommended!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="images/testimonial/Testimonial2.jpg" alt="Anjana">
+                </div>
+                <div class="author-info">
+                  <h4>Anjana</h4>
+                  <p>Product Manager</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                "Aakash surpassed all expectations! Their professionalism and creativity are unmatched. Highly recommended!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="images/testimonial/Testimonial3.jpg" alt="Bishal">
+                </div>
+                <div class="author-info">
+                  <h4>Bishal</h4>
+                  <p>Startup Founder</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group 2 -->
+          <div class="testimonials-group">
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                "Wow! I'm truly blown away by your service! It exceeded all my expectations and delivered outstanding results. Highly recommend to anyone looking for top-notch quality and impeccable service!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="images/testimonial/Testimonial4.jpg" alt="Sarah">
+                </div>
+                <div class="author-info">
+                  <h4>Sarah</h4>
+                  <p>Creative Director</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                "The experience of working with Aakash was truly satisfying. He was very responsible to our needs and always tried hard to provide the best results. Thank you for your cooperation!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="images/testimonial/Testimonial5.jpg" alt="John Doe">
+                </div>
+                <div class="author-info">
+                  <h4>John Doe</h4>
+                  <p>Tech Lead</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="testimonial-btn prev-btn" aria-label="Previous testimonials">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="testimonial-btn next-btn" aria-label="Next testimonials">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Dots Navigation -->
+        <div class="testimonial-dots"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="section bg-card">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Contact Me</span>
+        <h2 class="section-title gradient-text">Get in Touch</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="card contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h3>Location</h3>
+              <p class="text-muted">Chitwan, Nepal</p>
+            </div>
+          </div>
+
+          <div class="card contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h3>Phone</h3>
+              <p class="text-muted">+977 9804131198</p>
+            </div>
+          </div>
+
+          <div class="card contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <p class="text-muted">aakashsubedi@example.com</p>
+            </div>
+          </div>
+
+          <div class="card contact-card">
+            <h3 class="mb-4">Connect with me</h3>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/aakashsubedi" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/aakashsubedi" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/aakashsubedi_" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.facebook.com/aakashsubedi11" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card contact-form-card">
+          <h2 class="form-title">Send a Message</h2>
+          
+          <div class="success-message" id="successMessage">
+            Your message has been sent successfully!
+          </div>
+          
+          <div class="error-message" id="errorMessage"></div>
+          
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="copyright">
+        &copy; <span id="currentYear"></span> Aakash Subedi. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMobile = document.querySelector('.nav-mobile');
+    
+      menuToggle.addEventListener('click', function () {
+        navMobile.classList.toggle('show');
+        const isOpen = navMobile.classList.contains('show');
+        menuToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      });
+    
+      // Header scroll effect
+      const header = document.querySelector('.header');
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      });
+    
+      // Active nav link on scroll
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+    
+      function highlightNavLink() {
+        const scrollY = window.pageYOffset;
+        sections.forEach(section => {
+          const sectionHeight = section.offsetHeight;
+          const sectionTop = section.offsetTop - 100;
+          const sectionId = section.getAttribute('id');
+    
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+      window.addEventListener('scroll', highlightNavLink);
+    
+      // Tabs functionality
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+    
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          const tabId = this.getAttribute('data-tab');
+          tabBtns.forEach(btn => btn.classList.remove('active'));
+          tabPanes.forEach(pane => pane.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    
+      // Skill progress bars animation
+      const skillCards = document.querySelectorAll('.skill-card');
+    
+      function animateSkills() {
+        skillCards.forEach(card => {
+          const progressFill = card.querySelector('.progress-fill');
+          const proficiency = card.getAttribute('data-proficiency');
+          const valueElement = card.querySelector('.proficiency-value');
+    
+          let current = 0;
+          const increment = proficiency / 100;
+          const interval = setInterval(() => {
+            if (current >= proficiency) {
+              clearInterval(interval);
+            } else {
+              current += increment;
+              valueElement.textContent = `${Math.ceil(current)}%`;
+            }
+          }, 10);
+    
+          progressFill.style.width = `${proficiency}%`;
+        });
+      }
+    
+      const skillsSection = document.getElementById('skills');
+      const skillsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateSkills();
+            skillsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      skillsObserver.observe(skillsSection);
+    
+      // Project Filtering
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+    
+      projectCards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('fade-in-animation');
+        }, index * 100);
+      });
+    
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+    
+          const filter = this.getAttribute('data-filter');
+          projectCards.forEach(card => card.classList.add('fade-out'));
+    
+          setTimeout(() => {
+            projectCards.forEach((card, index) => {
+              const category = card.getAttribute('data-category');
+              if (filter === 'all' || category === filter) {
+                card.classList.remove('hidden');
+                setTimeout(() => {
+                  card.classList.remove('fade-out');
+                  card.classList.add('fade-in');
+                }, index * 100);
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          }, 300);
+        });
+      });
+    
+      // Testimonials Slider
+      const testimonialsTrack = document.querySelector('.testimonials-track');
+      const testimonialGroups = document.querySelectorAll('.testimonials-group');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      const dotsContainer = document.querySelector('.testimonial-dots');
+    
+      let currentSlide = 0;
+      let autoSlideInterval;
+      const totalSlides = testimonialGroups.length;
+    
+      testimonialGroups.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('testimonial-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+    
+      const dots = document.querySelectorAll('.testimonial-dot');
+    
+      function updateSlider() {
+        testimonialsTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentSlide);
+        });
+        prevBtn.classList.toggle('disabled', currentSlide === 0);
+        nextBtn.classList.toggle('disabled', currentSlide === totalSlides - 1);
+      }
+    
+      function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+        resetAutoSlide();
+      }
+    
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+        resetAutoSlide();
+      }
+    
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateSlider();
+          resetAutoSlide();
+        }
+      }
+    
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 7000);
+      }
+    
+      function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+      }
+    
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+    
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') prevSlide();
+        else if (e.key === 'ArrowRight') nextSlide();
+      });
+    
+      testimonialsTrack.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+      testimonialsTrack.addEventListener('mouseleave', startAutoSlide);
+    
+      updateSlider();
+      startAutoSlide();
+    
+      // Contact form submission
+      const contactForm = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+    
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+    
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+    
+        if (!name || !email || !subject || !message) {
+          errorMessage.textContent = 'Please fill in all fields';
+          errorMessage.style.display = 'block';
+          successMessage.style.display = 'none';
+          return;
+        }
+    
+        contactForm.reset();
+        successMessage.style.display = 'block';
+        errorMessage.style.display = 'none';
+    
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 5000);
+      });
+    
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+    
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+    
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            if (navMobile.classList.contains('show')) {
+              navMobile.classList.remove('show');
+              menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+    
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+    </script>
+    
+</body>
+</html>
