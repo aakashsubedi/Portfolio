@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aakash Subedi - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -381,21 +381,23 @@ body {
           <a href="index.html" class="logo">
             <span class="text-primary">Aakash</span>
           </a>
-    
+
           <!-- Desktop Navigation -->
           <nav class="nav-desktop">
             <a href="index.html" class="nav-link">Home</a>
             <a href="work.html" class="nav-link active">Work With Me</a>
+                          <a class="nav-link" href="learnmore.html">Learn More</a>
+
 
              </nav>
-    
+
           <a href="#contact" class="btn btn-primary desktop-only">Work with Me</a>
-    
+
           <!-- Mobile Menu Button -->
           <button class="menu-toggle" aria-label="Toggle menu">
             <i class="fas fa-bars"></i>
           </button>
-    
+
           <!-- Mobile Navigation -->
           <nav class="nav-mobile">
             <a href="index.html" class="nav-link">Home</a>
@@ -412,7 +414,7 @@ body {
                 <div class="glow glow-1"></div>
                 <div class="glow glow-2"></div>
             </div>
-            
+
             <div class="container">
                 <div class="hero-content animate-slide-up">
                     <p class="subtitle animate-fade-in">Let's Create Something Amazing Together</p>
@@ -499,7 +501,7 @@ body {
                         <h2 class="section-title gradient-text">Get in Touch</h2>
                         <p class="subtitle">Let's discuss your next project</p>
                     </div>
-                    
+
                     <div class="contact-form-container">
                         <form id="contactForm" class="contact-form">
                             <div class="form-grid">
@@ -576,13 +578,13 @@ contactForm.addEventListener('submit', (e) => {
         email: formData.get('email'),
         message: formData.get('message')
     };
-    
+
     // Here you would typically send the data to a server
     console.log('Form submitted:', data);
-    
+
     // Reset form
     contactForm.reset();
-    
+
     // Show success message
     alert('Message sent successfully!');
 });
@@ -636,7 +638,7 @@ document.querySelectorAll('.process-item').forEach(item => {
     item.addEventListener('mouseenter', () => {
         item.style.transform = 'translateY(-5px)';
     });
-    
+
     item.addEventListener('mouseleave', () => {
         item.style.transform = 'translateY(0)';
     });
