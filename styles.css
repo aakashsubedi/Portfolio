@@ -416,6 +416,32 @@
       transform: translateY(0);
     }
   }
+
+  @media (min-width: 768px) {
+    .hero-container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem; /* optional spacing between image and text */
+    }
+  
+    .hero-content,
+    .hero-image {
+      flex: 1;
+    }
+  
+    .hero-content {
+      padding-right: 2rem; /* optional spacing for better layout */
+    }
+  
+    .hero-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+  }
+  
   
   /* About Section */
   .about-grid {
