@@ -5,408 +5,809 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aakash Subedi - Portfolio</title>
     <link href="images/me.png" rel="icon">
-    <link rel="stylesheet" href="styles.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(31, 41, 55, 0.5);
+            --text-light: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: rgba(75, 85, 99, 0.5);
+            --gradient-start: #60a5fa;
+            --gradient-mid: #c084fc;
+            --gradient-end: #34d399;
+            --success: #10b981;
+            --error: #ef4444;
+        }
 
-:root {
-    --bg-dark: #0a0a0f;
-    --bg-card: rgba(31, 41, 55, 0.5);
-    --text-light: #f3f4f6;
-    --text-muted: #9ca3af;
-    --border-color: rgba(75, 85, 99, 0.5);
-    --gradient-start: #60a5fa;
-    --gradient-mid: #c084fc;
-    --gradient-end: #34d399;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    line-height: 1.5;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-/* Animations */
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        .header.scrolled {
+            padding: 0.75rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--text-light);
+        }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
+        .text-primary {
+            color: var(--gradient-start);
+        }
 
-.animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
-}
+        .nav-desktop {
+            display: flex;
+            gap: 2rem;
+        }
 
-.animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-}
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
 
-.gradient-text {
-    background: linear-gradient(-45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end), var(--gradient-start));
-    background-size: 300%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient 6s ease infinite;
-}
+        .nav-link:hover, .nav-link.active {
+            color: var(--gradient-start);
+        }
 
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-mid));
+            border-radius: 2px;
+        }
 
-.glow-container {
-    position: absolute;
-    inset: -10px;
-    opacity: 0.3;
-}
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
 
-.glow {
-    position: absolute;
-    width: 24rem;
-    height: 24rem;
-    border-radius: 50%;
-    filter: blur(160px);
-}
+        .btn-primary {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-mid));
+            color: white;
+        }
 
-.glow-1 {
-    background: var(--gradient-start);
-    top: 50%;
-    left: -5rem;
-    transform: translateY(-50%);
-}
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3);
+        }
 
-.glow-2 {
-    background: var(--gradient-mid);
-    top: 50%;
-    right: -5rem;
-    transform: translateY(-50%);
-}
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-.hero-content {
-    text-align: center;
-    z-index: 1;
-}
+        .nav-mobile {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            flex-direction: column;
+            padding: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-.hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: bold;
-    margin: 1.5rem 0;
-}
+        .nav-mobile.active {
+            display: flex;
+        }
 
-.subtitle {
-    color: var(--gradient-start);
-    font-weight: 500;
-    letter-spacing: 0.05em;
-}
+        .nav-mobile .nav-link {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-.description {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    max-width: 36rem;
-    margin: 0 auto;
-}
+        .mobile-btn {
+            margin-top: 1rem;
+            text-align: center;
+        }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2s infinite;
-}
+        /* Animations */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-/* Services Section */
-.services {
-    padding: 5rem 0;
-    background: rgba(17, 24, 39, 0.5);
-}
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.section-title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 3rem;
-}
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-.service-card {
-    padding: 2rem;
-    background: var(--bg-card);
-    border-radius: 1rem;
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(8px);
-    transition: all 0.3s ease;
-}
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-.service-card:hover {
-    transform: translateY(-0.5rem);
-    background: rgba(31, 41, 55, 0.8);
-}
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out forwards;
+        }
 
-.service-card .icon {
-    margin-bottom: 1rem;
-}
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
 
-.service-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-}
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
 
-.service-card p {
-    color: var(--text-muted);
-}
+        .gradient-text {
+            background: linear-gradient(-45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end), var(--gradient-start));
+            background-size: 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 6s ease infinite;
+        }
 
-/* Process Section */
-.process {
-    padding: 5rem 0;
-}
+        /* Particle Canvas */
+        #particleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
 
-.process-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-.process-item {
-    display: flex;
-    gap: 1.5rem;
-    padding: 2rem;
-    background: var(--bg-card);
-    border-radius: 1rem;
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(8px);
-    transition: all 0.3s ease;
-}
+        .glow-container {
+            position: absolute;
+            inset: -10px;
+            opacity: 0.3;
+        }
 
-.process-item:hover {
-    background: rgba(31, 41, 55, 0.8);
-}
+        .glow {
+            position: absolute;
+            width: 24rem;
+            height: 24rem;
+            border-radius: 50%;
+            filter: blur(160px);
+        }
 
-.process-item .number {
-    font-size: 3rem;
-    font-weight: bold;
-}
+        .glow-1 {
+            background: var(--gradient-start);
+            top: 50%;
+            left: -5rem;
+            transform: translateY(-50%);
+        }
 
-.process-item h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
+        .glow-2 {
+            background: var(--gradient-mid);
+            top: 50%;
+            right: -5rem;
+            transform: translateY(-50%);
+        }
 
-.process-item p {
-    color: var(--text-muted);
-}
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+        }
 
-/* Contact Section */
-.contact {
-    padding: 5rem 0;
-    background: rgba(17, 24, 39, 0.5);
-}
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
 
-.contact-container {
-    max-width: 64rem;
-    margin: 0 auto;
-}
+        .subtitle {
+            color: var(--gradient-start);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
 
-.contact-form-container {
-    background: var(--bg-card);
-    padding: 2rem;
-    border-radius: 1rem;
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(8px);
-    margin-top: 3rem;
-}
+        .description {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 36rem;
+            margin: 0 auto;
+        }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: rgba(17, 24, 39, 0.5);
+        }
 
-.form-group label {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-}
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
-.form-group input,
-.form-group textarea {
-    padding: 0.75rem 1rem;
-    background: rgba(17, 24, 39, 0.5);
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
-    color: var(--text-light);
-    transition: all 0.2s ease;
-}
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--gradient-start);
-    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
-}
+        .service-card {
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
 
-.submit-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: linear-gradient(to right, var(--gradient-start), var(--gradient-mid));
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.submit-btn:hover {
-    opacity: 0.9;
-}
+        .service-card:hover {
+            transform: translateY(-0.5rem);
+            background: rgba(31, 41, 55, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
 
-.contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
-}
+        .service-card .icon {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
 
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
 
-.icon-container {
-    padding: 0.5rem;
-    background: rgba(96, 165, 250, 0.1);
-    border-radius: 0.5rem;
-    color: var(--gradient-start);
-}
+        .service-card p {
+            color: var(--text-muted);
+        }
 
-.email-btn {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
+        /* Process Section */
+        .process {
+            padding: 5rem 0;
+        }
 
-.email-btn:hover {
-    color: var(--text-light);
-}
+        .process-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
+        .process-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
 
-    .description {
-        font-size: 1rem;
-    }
+        .process-item:nth-child(even) {
+            transform: translateX(20px);
+        }
 
-    .process-item {
-        flex-direction: column;
-    }
+        .process-item.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
-    .contact-form-container {
-        padding: 1.5rem;
-    }
+        .process-item:hover {
+            background: rgba(31, 41, 55, 0.8);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
 
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        .process-item .number {
+            font-size: 3rem;
+            font-weight: bold;
+            min-width: 60px;
+        }
 
+        .process-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-item p {
+            color: var(--text-muted);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: rgba(17, 24, 39, 0.5);
+        }
+
+        .contact-container {
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+
+        .contact-form-container {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(8px);
+            margin-top: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .contact-form-container.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-label i {
+            color: var(--gradient-start);
+        }
+
+        .form-input, .form-textarea {
+            padding: 1rem 1.25rem;
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--gradient-start);
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2rem;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-mid));
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .submit-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .icon-container {
+            padding: 0.75rem;
+            background: rgba(96, 165, 250, 0.1);
+            border-radius: 0.75rem;
+            color: var(--gradient-start);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .info-value {
+            font-weight: 500;
+        }
+
+        .email-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: color 0.2s ease;
+            font-family: inherit;
+            font-size: inherit;
+            text-align: left;
+            padding: 0;
+        }
+
+        .email-btn:hover {
+            color: var(--gradient-start);
+        }
+
+        /* Floating elements for contact form */
+        .floating-element {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-1 {
+            background: var(--gradient-start);
+            top: -50px;
+            right: -50px;
+            animation-delay: 0s;
+        }
+
+        .floating-2 {
+            background: var(--gradient-mid);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 2s;
+        }
+
+        .floating-3 {
+            background: var(--gradient-end);
+            top: 50%;
+            left: 10%;
+            animation-delay: 4s;
+        }
+
+        /* Success Message */
+        .success-message {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--success);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            max-width: 350px;
+        }
+
+        .success-message.show {
+            transform: translateX(0);
+        }
+
+        .success-icon {
+            font-size: 1.5rem;
+        }
+
+        .success-content h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .success-content p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Form Validation */
+        .form-input.error, .form-textarea.error {
+            border-color: var(--error);
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-desktop, .desktop-only {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .process-item {
+                flex-direction: column;
+            }
+
+            .contact-form-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .success-message {
+                right: 1rem;
+                left: 1rem;
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .service-card, .process-item {
+                padding: 1.5rem;
+            }
+
+            .process-item .number {
+                font-size: 2.5rem;
+            }
+
+            .contact-form-container {
+                padding: 1.5rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .form-input, .form-textarea {
+                padding: 0.875rem 1rem;
+            }
+
+            .submit-btn {
+                padding: 1rem 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
 
     <header class="header">
         <div class="container">
-          <a href="index.html" class="logo">
-            <span class="text-primary">Aakash</span>
-          </a>
+            <a href="index.html" class="logo">
+                <span class="text-primary">Aakash</span>
+            </a>
 
-          <!-- Desktop Navigation -->
-          <nav class="nav-desktop">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="work.html" class="nav-link active">Work With Me</a>
-                          <a class="nav-link" href="learnmore.html">Learn More</a>
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="work.html" class="nav-link active">Work With Me</a>
+                <a class="nav-link" href="learnmore.html">Learn More</a>
+            </nav>
 
+            <a href="#contact" class="btn btn-primary desktop-only">Work with Me</a>
 
-             </nav>
+            <!-- Mobile Menu Button -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
 
-          <a href="#contact" class="btn btn-primary desktop-only">Work with Me</a>
-
-          <!-- Mobile Menu Button -->
-          <button class="menu-toggle" aria-label="Toggle menu">
-            <i class="fas fa-bars"></i>
-          </button>
-
-          <!-- Mobile Navigation -->
-          <nav class="nav-mobile">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="work.html" class="nav-link active">Work With Me</a>
-            <a href="work.html" class="btn btn-primary mobile-btn">Work with Me</a>
-          </nav>
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="work.html" class="nav-link active">Work With Me</a>
+                <a class="nav-link" href="learnmore.html">Learn More</a>
+                <a href="#contact" class="btn btn-primary mobile-btn">Work with Me</a>
+            </nav>
         </div>
-      </header>
+    </header>
 
     <div class="min-h-screen bg-dark text-light">
         <!-- Hero Section -->
@@ -495,56 +896,101 @@ body {
         </section>
 
         <!-- Contact Section -->
-        <section class="contact">
+        <section id="contact" class="contact">
             <div class="container">
                 <div class="contact-container">
-                    <div class="text-center">
+                    <div class="contact-header">
                         <h2 class="section-title gradient-text">Get in Touch</h2>
-                        <p class="subtitle">Let's discuss your next project</p>
+                        <p class="section-subtitle">Let's discuss your next project</p>
                     </div>
 
                     <div class="contact-form-container">
+                        <!-- Floating background elements -->
+                        <div class="floating-element floating-1"></div>
+                        <div class="floating-element floating-2"></div>
+                        <div class="floating-element floating-3"></div>
+
                         <form id="contactForm" class="contact-form">
-                            <div class="form-grid">
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" placeholder="John Doe" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="email" placeholder="john@example.com" required>
-                                </div>
-                            </div>
                             <div class="form-group">
-                                <label>Message</label>
-                                <textarea rows="6" placeholder="Tell me about your project..." required></textarea>
+                                <label class="form-label">
+                                    <i class="fas fa-user"></i>
+                                    Name
+                                </label>
+                                <input type="text" class="form-input" placeholder="John Doe" required>
+                                <span class="error-message">Please enter your name</span>
                             </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-envelope"></i>
+                                    Email
+                                </label>
+                                <input type="email" class="form-input" placeholder="john@example.com" required>
+                                <span class="error-message">Please enter a valid email address</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-building"></i>
+                                    Company
+                                </label>
+                                <input type="text" class="form-input" placeholder="Your Company">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-tag"></i>
+                                    Subject
+                                </label>
+                                <input type="text" class="form-input" placeholder="Project Inquiry">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label">
+                                    <i class="fas fa-comment"></i>
+                                    Message
+                                </label>
+                                <textarea class="form-textarea" placeholder="Tell me about your project, goals, and timeline..." required></textarea>
+                                <span class="error-message">Please enter your message</span>
+                            </div>
+
                             <button type="submit" class="submit-btn">
                                 Send Message
-                                <i data-lucide="send"></i>
+                                <i class="fas fa-paper-plane"></i>
                             </button>
                         </form>
 
                         <div class="contact-info">
                             <div class="info-item">
                                 <div class="icon-container">
-                                    <i data-lucide="mail"></i>
+                                    <i class="fas fa-envelope"></i>
                                 </div>
-                                <button id="copyEmail" class="email-btn">
-                                    aakkashsubedi@gmail.com
-                                </button>
+                                <div class="info-text">
+                                    <span class="info-label">Email</span>
+                                    <button id="copyEmail" class="email-btn info-value">
+                                        aakkashsubedi@gmail.com
+                                    </button>
+                                </div>
                             </div>
+
                             <div class="info-item">
                                 <div class="icon-container">
-                                    <i data-lucide="map-pin"></i>
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                                <span>Available Worldwide</span>
+                                <div class="info-text">
+                                    <span class="info-label">Location</span>
+                                    <span class="info-value">Available Worldwide</span>
+                                </div>
                             </div>
+
                             <div class="info-item">
                                 <div class="icon-container">
-                                    <i data-lucide="clock"></i>
+                                    <i class="fas fa-clock"></i>
                                 </div>
-                                <span>Response time: 2-8 hours</span>
+                                <div class="info-text">
+                                    <span class="info-label">Response Time</span>
+                                    <span class="info-value">2-8 hours</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -555,96 +1001,287 @@ body {
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-              <p class="copyright">
-                &copy; <span id="currentYear"></span> Aakash Subedi. All rights reserved.
-              </p>
+                <p class="copyright">
+                    &copy; <span id="currentYear"></span> Aakash Subedi. All rights reserved.
+                </p>
             </div>
-          </footer>
+        </footer>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="success-content">
+            <h4>Message Sent Successfully!</h4>
+            <p>Thank you for reaching out. I'll get back to you soon.</p>
+        </div>
     </div>
 
     <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
 
-// Initialize Lucide icons
-lucide.createIcons();
+        // Particle Canvas Animation
+        const canvas = document.getElementById("particleCanvas");
+        const ctx = canvas.getContext("2d");
 
-// Form handling
-const contactForm = document.getElementById('contactForm');
-const copyEmailBtn = document.getElementById('copyEmail');
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(contactForm);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message')
-    };
+        let mouse = { x: width / 2, y: height / 2 };
+        let particles = [];
+        let hue = 200; // Starting with blue hue
 
-    // Here you would typically send the data to a server
-    console.log('Form submitted:', data);
+        // Particle class
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+                this.color = `hsl(${hue}, 100%, 70%)`;
+                this.alpha = 1;
+            }
 
-    // Reset form
-    contactForm.reset();
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.alpha -= 0.01;
+            }
 
-    // Show success message
-    alert('Message sent successfully!');
-});
-
-// Copy email functionality
-copyEmailBtn.addEventListener('click', async () => {
-    try {
-        await navigator.clipboard.writeText('aakkashsubedi@gmail.com');
-        const originalText = copyEmailBtn.textContent;
-        copyEmailBtn.textContent = 'Email copied!';
-        setTimeout(() => {
-            copyEmailBtn.textContent = originalText;
-        }, 2000);
-    } catch (err) {
-        console.error('Failed to copy email:', err);
-    }
-});
-
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            observer.unobserve(entry.target);
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
         }
-    });
-}, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll('.service-card, .process-item').forEach(el => {
-    observer.observe(el);
-});
+        // Handle window resize
+        window.addEventListener("resize", () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
 
-// Handle scroll indicator
-const scrollIndicator = document.querySelector('.scroll-indicator');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        scrollIndicator.style.opacity = '0';
-    } else {
-        scrollIndicator.style.opacity = '1';
-    }
-});
+        // Track mouse movement
+        window.addEventListener("mousemove", (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            
+            // Create particles at mouse position
+            for (let i = 0; i < 3; i++) {
+                particles.push(new Particle(mouse.x, mouse.y));
+            }
+        });
 
-// Add hover effect to process items
-document.querySelectorAll('.process-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.style.transform = 'translateY(-5px)';
-    });
+        // Animation loop
+        function animateParticles() {
+            ctx.clearRect(0, 0, width, height);
+            
+            // Create a subtle gradient orb at cursor position
+            const gradient = ctx.createRadialGradient(
+                mouse.x, mouse.y, 0,
+                mouse.x, mouse.y, 100
+            );
+            gradient.addColorStop(0, `hsla(${hue}, 100%, 70%, 0.2)`);
+            gradient.addColorStop(1, "transparent");
+            
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(mouse.x, mouse.y, 100, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Update and draw particles
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                // Remove particles that have faded out
+                if (particles[i].alpha <= 0) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+            
+            // Slowly cycle through hues
+            hue += 0.5;
+            if (hue >= 360) hue = 0;
+            
+            requestAnimationFrame(animateParticles);
+        }
 
-    item.addEventListener('mouseleave', () => {
-        item.style.transform = 'translateY(0)';
-    });
-});
+        animateParticles();
 
+        // Form handling
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const copyEmailBtn = document.getElementById('copyEmail');
+
+        // Form validation and submission
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form elements
+            const nameInput = contactForm.querySelector('input[type="text"]');
+            const emailInput = contactForm.querySelector('input[type="email"]');
+            const messageTextarea = contactForm.querySelector('textarea');
+            
+            let isValid = true;
+            
+            // Validate name
+            if (!nameInput.value.trim()) {
+                nameInput.classList.add('error');
+                nameInput.nextElementSibling.classList.add('show');
+                isValid = false;
+            } else {
+                nameInput.classList.remove('error');
+                nameInput.nextElementSibling.classList.remove('show');
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+                emailInput.classList.add('error');
+                emailInput.nextElementSibling.classList.add('show');
+                isValid = false;
+            } else {
+                emailInput.classList.remove('error');
+                emailInput.nextElementSibling.classList.remove('show');
+            }
+            
+            // Validate message
+            if (!messageTextarea.value.trim()) {
+                messageTextarea.classList.add('error');
+                messageTextarea.nextElementSibling.classList.add('show');
+                isValid = false;
+            } else {
+                messageTextarea.classList.remove('error');
+                messageTextarea.nextElementSibling.classList.remove('show');
+            }
+            
+            if (isValid) {
+                // Show loading state on button
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Show success message
+                    successMessage.classList.add('show');
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 5000);
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    
+                    // Log form data (in a real app, you would send this to a server)
+                    const formData = {
+                        name: nameInput.value,
+                        email: emailInput.value,
+                        company: contactForm.querySelector('input[placeholder="Your Company"]').value,
+                        subject: contactForm.querySelector('input[placeholder="Project Inquiry"]').value,
+                        message: messageTextarea.value
+                    };
+                    console.log('Form submitted:', formData);
+                }, 1500);
+            }
+        });
+
+        // Real-time validation
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.value.trim()) {
+                    input.classList.remove('error');
+                    if (input.nextElementSibling) {
+                        input.nextElementSibling.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Copy email functionality
+        copyEmailBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText('aakkashsubedi@gmail.com');
+                const originalText = copyEmailBtn.textContent;
+                copyEmailBtn.textContent = 'Email copied!';
+                copyEmailBtn.style.color = 'var(--success)';
+                
+                setTimeout(() => {
+                    copyEmailBtn.textContent = originalText;
+                    copyEmailBtn.style.color = '';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy email:', err);
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMobile = document.querySelector('.nav-mobile');
+
+        menuToggle.addEventListener('click', () => {
+            navMobile.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .process-item, .contact-form-container').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Handle scroll indicator
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '1';
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
